@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    right: 100px;
+}
+
+.rotate {
+    -webkit-animation: rot 5s linear infinite;
+    /* 关键帧动画 */
+    animation: rot 5s linear infinite;
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
+
+@keyframes rot {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.play {
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: 10;
+    bottom: 20px;
+    left: 35px;
+    transform: rotate(0);
+}
+
+.play-b {
+    position: absolute;
+    z-index: 12;
+    width: 60px;
+    height: 80px;
+    right: 17px;
+    top: 30px;
+    transform: rotate(-17deg);
+    transform-origin: 75% 22%;
+    -webkit-transform-origin: 75% 22%;
+    cursor: pointer;
+}
+
+.buttonRot {
+    -webkit-animation: brot 0.5s ease-in-out forwards;
+    animation: brot 0.5s ease-in-out forwards;
+
+}
+
+.buttonRot_back {
+    -webkit-animation: brot_back 0.5s ease-in-out forwards;
+    animation: brot_back 0.5s ease-in-out forwards;
+
+}
+
+@keyframes brot {
+    0% {
+        transform: rotate(-17deg);
+    }
+
+    100% {
+        transform: rotate(-4deg);
+    }
+}
+
+@keyframes brot_back {
+    0% {
+        transform: rotate(-4deg);
+    }
+
+    100% {
+        transform: rotate(-17deg);
+    }
+}
+
+.play-pic {
+    translate: 90% -196%;
+    /* position: absolute;
+    top: 50px;
+    left: 47px; */
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+}
+
+/*文字特效css*/
+.main h1 {
+    color: #2de7ee;
+    font-family: Helvetica;
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    position: relative;
+}
+
+.main h1::after {
+    content: attr(data-spotlight);
+    color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-clip-path: ellipse(16px 16px at 0% 50%);
+    clip-path: ellipse(16px 16px at 0% 50%);
+    animation: spotlight 7s infinite;
+    background-image: url(https://ts1.cn.mm.bing.net/th/id/R-C.8a82fc696441aaf1c18ef32944672bbc?rik=hWn5L634MyBglg&riu=http%3a%2f%2fimg.51miz.com%2fElement%2f00%2f81%2f15%2f50%2fc77e727b_E811550_7f9027db.jpg!%2fquality%2f90%2funsharp%2ftrue%2fcompress%2ftrue%2fformat%2fjpg&ehk=R9vpwbWUtLRtKgyc1jU3u%2frFITfnrL5Bd%2bIIF29f0bM%3d&risl=&pid=ImgRaw&r=0);
+    background-size: 50%;
+    background-position: center center;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+@keyframes spotlight {
+    0% {
+        -webkit-clip-path: ellipse(16px 16px at 0% 50%);
+        clip-path: ellipse(16px 16px at 0% 50%);
+    }
+
+    50% {
+        -webkit-clip-path: ellipse(16px 16px at 100% 50%);
+        clip-path: ellipse(16px 16px at 100% 50%);
+    }
+
+    100% {
+        -webkit-clip-path: ellipse(16px 16px at 0% 50%);
+        clip-path: ellipse(16px 16px at 0% 50%);
+    }
+}
